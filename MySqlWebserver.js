@@ -294,7 +294,7 @@ app.get('/mypageInfo', function (req , res) {
                 console.log("내가 쓴 댓글:"+ myCommentrows[i].user_id, myCommentrows[i].comment_idx,myCommentrows[i].user_email,myCommentrows[i].shop_name,myCommentrows[i].contents, myCommentrows[i].reg_dtm,myCommentrows[i].score);
             }
             for(var i = 0; i < myCartrows.length; i++){
-                console.log("내가 쓴 댓글:"+ myCartrows[i].user_id, myCartrows[i].comment_idx,myCartrows[i].user_email,myCartrows[i].shop_name,myCartrows[i].contents, myCartrows[i].reg_dtm,myCartrows[i].score);
+                console.log("내가 찜한 곳:"+ myCartrows[i].user_id, myCartrows[i].comment_idx,myCartrows[i].user_email,myCartrows[i].shop_name,myCartrows[i].contents, myCartrows[i].reg_dtm,myCartrows[i].score);
             }
             res.render('mypageInfo.ejs', {mypageInfo: myPagerows, mypageReview: myReviewrows, mypageComment: myCommentrows, mypageCart: myCartrows});
         }
