@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>마이페이지</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+            crossorigin="anonymous">
+    </head>
+    <body>
+        <!-- <%- include('nav.html') %>
+        <%- include('mypage.html') %> -->
+        
+        <!-- <ul class="mypage-group">
+            <h1>나의 정보</h1><p></p>
+            
+            <li class="list-group-item-myinfo">
+
+                <p>이메일:<%= mypageCart[0].user_id %> </p>
+                <p>이름: <%= mypageCart[0].user_name %></p>
+                <p>닉네임 : <%= mypageCart[0].user_nickname %></p>
+                <p>전화번호 <%= mypageCart[0].user_phonenumber %></p>
+            </li>
+
+        </ul> -->
+
+        <ul class="myshop-group">
+            <h1>내가 찜한 곳<h2><p></p>
+            <% for (let i = 0; i < mypageCart.length; i++){ %>
+                <li class="list-group-item-mycomment">
+                    <p>술집 이름 : <%= mypageCart[i].shop_name%></p>
+                    <p>상점주소 : <%= mypageCart[i].shop_addr%></p>
+                    <p>리뷰입력 날짜 : <%= mypageCart[i].reg_dtm%></p>
+                </li>
+                <% } %>
+        </ul>
+
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>마이페이지</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+            crossorigin="anonymous">
+    </head>
+    <body>
+        <%- include('nav.html') %>
+        <%- include('mypage.html') %>
+        <h1>마이정보 edit 페이지</h1>
+        <!-- <% for (let i = 0; i < mypageInfo.length; i++){ %> -->
+        <form action="/mypageInfo/update/<%= mypageInfo[0].user_id %>" enctype="multipart/form-data" method="post">
+            <!-- <input type="text" readonly style="display: none;" name="user_id"  value= <%= mypageInfo[0].user_id %>> -->
+            <input type="text" hidden name="user_id" value="<%= mypageInfo[0].user_id %>"><br>>
+            프로필 <input  type="file" name="user_imageaddr" value="<%= mypageInfo[0].user_imageaddr %>" required><br>
+            이메일: <input type="text" name="user_email" value="<%= mypageInfo[0].user_email %>"><br>
+            이름: <input  type="text" name="user_name" value="<%= mypageInfo[0].user_name %>"><br>
+            닉네임: <input type="text" name="user_nickname" value="<%= mypageInfo[0].user_nickname %>"><br>
+            전화번호: <input type="text" name="user_phonenumber" value="<%= mypageInfo[0].user_phonenumber %>"><br> 
+            <button type="submit">수정</button>
+            <!-- <% } %> -->
+        </form>
+    </body>
+</html>

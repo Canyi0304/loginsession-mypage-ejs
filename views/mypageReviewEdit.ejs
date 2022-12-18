@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>마이페이지</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+            crossorigin="anonymous">
+    </head>
+    <body>
+        <!-- <%- include('nav.html') %>
+        <%- include('mypage.html') %> -->
+        <h1>마이리뷰 edit 페이지</h1>
+        <% for (let i = 0; i < mypageReview.length; i++){ %>
+        <form action="/mypageReview/update/<%= mypageReview[i].shop_id %>" method="post">
+            <input type="text" readonly style="display: none;" name="shop_id"  value= <%= mypageReview[i].shop_id %>>
+            술집 이름: <input readonly type="text" name="shop_name" value="<%= mypageReview[i].shop_name %>"><br>
+            나의 리뷰: <input type="text" name="Field" value="<%= mypageReview[i].Field %>"><br>
+            상점 주소: <input readonly type="text" name="shop_addr" value="<%= mypageReview[i].shop_addr %>"><br> 
+            <button type="submit">수정</button>
+            <% } %>
+        </form>
+    </body>
+</html>

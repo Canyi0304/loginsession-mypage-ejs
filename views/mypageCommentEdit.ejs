@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>마이페이지</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+            crossorigin="anonymous">
+    </head>
+    <body>
+        <!-- <%- include('nav.html') %>
+        <%- include('mypage.html') %> -->
+        <h1>마이댓글 edit 페이지</h1>
+        <% for (let i = 0; i < mypageComment.length; i++){ %>
+        <form action="/mypageComment/update/<%= mypageComment[i].comment_idx %>" method="post">
+
+            나의 댓글: <input type="text" name="contents" value="<%= mypageComment[i].contents %>"><br>
+            술집 점수: <input  type="text" name="score" value="<%= mypageComment[i].score %>"><br>
+            <button type="submit">수정</button>
+        <% } %>
+        </form>
+    </body>
+</html>
